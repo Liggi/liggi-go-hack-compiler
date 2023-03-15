@@ -1,0 +1,11 @@
+class Main {
+  function void main() {
+    do Output.printInt(((1 + 2) - 3) + ((4 * 5) / 6));
+    return;
+  }
+
+  function void second(arg1) {
+    do Output.printStr(1 + (arg1 * 3) / (4 / 4) + ((2 + 3) + 1));
+    return;
+  }
+} 

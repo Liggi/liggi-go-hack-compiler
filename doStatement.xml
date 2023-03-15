@@ -1,0 +1,100 @@
+<doStatement>
+  <keyword> do </keyword>
+  <identifier> Screen </identifier>
+  <symbol> . </symbol>
+  <identifier> drawRectangle </identifier>
+  <symbol> ( </symbol>
+  <expressionList>
+    <expression>
+      <term>
+        <identifier> x </identifier>
+      </term>
+    </expression>
+    <symbol> , </symbol>
+    <expression>
+      <term>
+        <identifier> y </identifier>
+      </term>
+    </expression>
+    <symbol> , </symbol>
+    <expression>
+      <term>
+        <identifier> x </identifier>
+      </term>
+      <symbol> + </symbol>
+      <term>
+        <identifier> size </identifier>
+      </term>
+    </expression>
+    <symbol> , </symbol>
+    <expression>
+      <term>
+        <identifier> y </identifier>
+      </term>
+      <symbol> + </symbol>
+      <term>
+        <identifier> size </identifier>
+      </term>
+    </expression>
+  </expressionList>
+  <symbol> ) </symbol>
+  <symbol> ; </symbol>
+</doStatement>
+
+      do Screen.drawRectangle(x, y, x + size, y + size);
+
+
+<expressionList>
+  <expression>
+    <term>
+      <integerConstant>1</integerConstant>
+    </term>
+  </expression>
+  <symbol>+</symbol>
+  <expression>
+    <term>
+      <symbol>(</symbol>
+      <expression>
+        <term>
+          <integerConstant>2</integerConstant>
+        </term>
+        <symbol>*</symbol>
+        <term>
+          <integerConstant>3</integerConstant>
+        </term>
+        <symbol>+</symbol>
+        <expression>
+          <term>
+            <symbol>(</symbol>
+            <expression>
+              <term>
+                <integerConstant>4</integerConstant>
+              </term>
+              <symbol>/</symbol>
+              <term>
+                <integerConstant>5</integerConstant>
+              </term>
+            </expression>
+            <symbol>)</symbol>
+          </term>
+        </expression>
+      </expression>
+      <symbol>)</symbol>
+    </term>
+  </expression>
+</expressionList>
+
+
+
+ok so: 
+
+- hitting an integer constant, or an identifier, opens up a new expression (unless one is already open)
+- hitting a ( opens up a new term
+
+
+expect: 
+
+expression - term - symbol - expression - term - symbol - expression - term
+get: 
+
+expression - term - symbol - expression - expression - term - symbol - expression - term
